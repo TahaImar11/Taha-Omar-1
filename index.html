@@ -2,8 +2,6 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>معلومات المقرر</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet">
   <title>مطعم تايم برجر</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Bootstrap & Google Fonts -->
@@ -77,23 +75,22 @@
       transition: transform 0.3s ease;
     }
    .products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 40px 20px;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 40px;
+    }
 
-.product {
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  width: 100%;
-  max-width: 320px;
-  text-align: center;
-  padding: 20px;
-  transition: transform 0.3s ease;
-}
+    .product {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 320px;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
 
 @media (max-width: 600px) {
   .products {
@@ -225,6 +222,54 @@
       font-size: 16px;
     }
 
+    .cart {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  background: #fff;
+  color: #000;
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  max-height: 400px;
+  overflow-y: auto;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border: 2px solid #d32f2f;
+}
+
+.cart h3 {
+  margin-top: 0;
+  font-size: 22px;
+  color: #d32f2f;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#cart-items li {
+  font-size: 16px;
+  padding: 8px 10px;
+  border-bottom: 1px solid #d32f2f;
+  list-style: none;
+  text-align: right;
+}
+
+.remove-btn {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
     /* قسم المشروبات */
     .drinks {
       background-color: #fefefe;
@@ -255,24 +300,24 @@
     <a href="#mmmm">معلومات المقرر</a>
     <a href="#contact">تواصل معنا</a>  
   </nav>
-  <section id="menu">  
-    <h2>المنيو </h2>
-    <div class="products">
-      <img src="2efbc94c-0178-47ff-b9a6-e617af51604d.jpg">
-    </section>
-    </div>
-  </section>
+
+<section id="menu">  
+  <h2>المنيو </h2>
+  <div class="products">
+    <img src="2efbc94c-0178-47ff-b9a6-e617af51604d.jpg" alt="صورة المنيو">
+  </div>
+</section>
   <section id="gallery">
     <section class="products">
     <h2>صور الأطباق</h2>
     <div class="product">
       <img src="f686f763-6a01-4ab8-9a20-d9bc932ad984.jpg" alt="وجبة برجر كومبو">
      <h3> جنيهCLASSIC BEEF- 80 </h3>
-        <button class="order-btn">اطلب الآن</button>
+        <button class="order-btn" onclick="addToCart('CLASSIC BURGER', 50)">اطلب الآن</button>
     </div>
     <div class="product">
         <img src="dd90c94b-a170-4482-a8a5-69eb0d841026.jpg" alt="استربس دجاج">
-        <h3> جنيهBACON CHEESEBYRGER- - 99 </h3>
+        <h3>جنيهBACON CHEESEBYRGER- - 99 </h3>
         <button class="order-btn">اطلب الآن</button>
       </div>
       <div class="product">
@@ -340,7 +385,7 @@
     <section id="team-section" style="text-align: center; padding: 40px; background-color: #f9f9f9;">
         <h2 style="color: #b71c1c;">فريق العمل</h2>
         <div class="productt">
-        <img src="98ac0df2-0059-4705-b953-59438380b39f.jpg" hight="40",width="50",border="5">
+          <img src="taha.jpg"  hight="40",width="50",border="5"style="border: 5px solid #000;">
         </div>
         <!-- المصمم الرئيسي -->
         <div style="margin-bottom: 40px;">
@@ -352,13 +397,13 @@
         <!-- باقي الفريق -->
         <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
           <div style="background-color: #f44336; color: white; padding: 15px 20px; border-radius: 10px; width: 200px;">
-              – تنسيق وتصميم
+              انس كامل محمود– تنسيق وتصميم
           </div>
           <div style="background-color: #f44336; color: white; padding: 15px 20px; border-radius: 10px; width: 200px;">
-             – كتابة المحتوى
+             حازم رجب رمضان فرحات– كتابة المحتوى
           </div>
           <div style="background-color: #f44336; color: white; padding: 15px 20px; border-radius: 10px; width: 200px;">
-              – صور المنتجات
+             احمد عشرى عبد الكريم – صور المنتجات
           </div>
           <div style="background-color: #f44336; color: white; padding: 15px 20px; border-radius: 10px; width: 200px;">
               – مراجعة لغوية
@@ -394,5 +439,31 @@
       <button type="submit">إرسال</button>
     </form>
   </section>
+  <div id="cart" class="cart">
+  <h3>سلة الطلبات</h3>
+  <ul id="cart-items"></ul>
+</div>
+<script>
+  const cartItemsList = document.getElementById("cart-items");
+  function addToCart(productName, price) {
+    const listItem = document.createElement("li");
+    listItem.innerHTML = `${productName} - ${price} جنيه 
+      <button class="remove-btn" onclick="this.parentElement.remove()">X</button>`;
+    cartItemsList.appendChild(listItem);
+  }
+
+  const orderButtons = document.querySelectorAll(".order-btn");
+
+  orderButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      const productCard = this.closest(".product");
+      const productName = productCard.querySelector("h3").innerText.split(" - ")[0].trim();
+      const priceText = productCard.querySelector("h3").innerText.match(/(\d+)/);
+      const price = priceText ? parseInt(priceText[0]) : 0;
+
+      addToCart(productName, price);
+    });
+  });
+</script>
 </body>
 </html>
